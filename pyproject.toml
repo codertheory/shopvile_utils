@@ -1,0 +1,22 @@
+[project]
+name = "shopvile-utils"
+version = "0.1.0"
+description = "Collection of Utility scripts for Shopvile"
+requires-python = ">=3.12"
+dependencies = [
+    "fastexcel>=0.13.0",
+    "openpyxl>=3.1.5",
+    "polars>=1.27.1",
+    "pyinstaller==6.13.0",
+    "pyinstaller-hooks-contrib==2025.3",
+    "xlsxwriter>=3.2.3",
+]
+[project.optional-dependencies]
+cli = [
+  "pyinstaller"
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.6",
+]

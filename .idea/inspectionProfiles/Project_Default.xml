@@ -1,0 +1,63 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="AssertInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="IncorrectHttpHeaderInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="customHeaders">
+        <set>
+          <option value="x-sdx-key" />
+        </set>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ourVersions">
+        <value>
+          <list size="2">
+            <item index="0" class="java.lang.String" itemvalue="3.13" />
+            <item index="1" class="java.lang.String" itemvalue="3.12" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyDataclassInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyNestedDecoratorsInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="20">
+            <item index="0" class="java.lang.String" itemvalue="discord" />
+            <item index="1" class="java.lang.String" itemvalue="jose" />
+            <item index="2" class="java.lang.String" itemvalue="starlette" />
+            <item index="3" class="java.lang.String" itemvalue="pydantic" />
+            <item index="4" class="java.lang.String" itemvalue="identify" />
+            <item index="5" class="java.lang.String" itemvalue="setuptools" />
+            <item index="6" class="java.lang.String" itemvalue="dateparser" />
+            <item index="7" class="java.lang.String" itemvalue="pyasn1" />
+            <item index="8" class="java.lang.String" itemvalue="pydantic-core" />
+            <item index="9" class="java.lang.String" itemvalue="platformdirs" />
+            <item index="10" class="java.lang.String" itemvalue="faker" />
+            <item index="11" class="java.lang.String" itemvalue="ruff" />
+            <item index="12" class="java.lang.String" itemvalue="virtualenv" />
+            <item index="13" class="java.lang.String" itemvalue="aiohttp" />
+            <item index="14" class="java.lang.String" itemvalue="yarl" />
+            <item index="15" class="java.lang.String" itemvalue="uvicorn" />
+            <item index="16" class="java.lang.String" itemvalue="pygments" />
+            <item index="17" class="java.lang.String" itemvalue="retrying" />
+            <item index="18" class="java.lang.String" itemvalue="unfold" />
+            <item index="19" class="java.lang.String" itemvalue="admin_tools_stats" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="starlette.testclient.TestClient.dependency_overrides" />
+          <option value="fastapi.applications.FastAPI.*" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PydanticInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+  </profile>
+</component>
