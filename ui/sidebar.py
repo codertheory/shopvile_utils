@@ -27,14 +27,12 @@ class Sidebar(tk.Frame):
     def __init__(
         self,
         parent,
-        logo_icon: tk.PhotoImage,
         options: list[dict],
         frame_cb: callable = None,
     ):
         """
         This is the constructor for the Sidebar class.
         :param parent: The parent frame
-        :param logo_icon: The logo icon to be displayed
         :param options: The options to be displayed in the sidebar
         :param frame_cb: The function to be called when an option is clicked
         """

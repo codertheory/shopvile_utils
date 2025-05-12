@@ -20,8 +20,6 @@ class ShopVilleUiApp(tk.Tk):
         self.config(background=selectionbar_color)
         self.resizable(width=False, height=False)
         self.eval("tk::PlaceWindow . center")
-        icon = tk.PhotoImage(file="ui/assets/logo.png")
-        self.iconphoto(True, icon)
 
         # --------------------  MAIN FRAME ---------------------------
 
@@ -31,7 +29,6 @@ class ShopVilleUiApp(tk.Tk):
         # --------------------  SIDEBAR SETTINGS ----------------------------
         Sidebar(
             self,
-            icon,
             frame_cb=self.show_frame,
             options=[
                 {
