@@ -2,15 +2,16 @@ import datetime
 import logging
 import pathlib
 from tkinter import ttk
+
 import polars as pl
 import xlsxwriter
 
-from common import call_with_progress, load_file, NoSkuColumnsFound
+from common import NoSkuColumnsFound, call_with_progress, load_file
 from common.constants import (
-    LOOKUP_COLUMN,
     HIDDEN_SKU_COLUMN,
+    LOOKUP_COLUMN,
+    QUANTITY_ON_HAND,
     SKU_SUBSTR,
-    UNITS_SOLD_LAST_30_DAYS,
 )
 
 
@@ -41,15 +42,16 @@ def join_inventory_restock(
     inventory_df: pl.DataFrame, restock_df: pl.DataFrame
 ) -> pl.DataFrame:
     # Join on "SKU"
-    return restock_df.join(
-        inventory_df, on=HIDDEN_SKU_COLUMN, how="left", suffix="_inv"
+    return inventory_df.join(
+        restock_df, on=HIDDEN_SKU_COLUMN, how="left", suffix="_inv"
     )
 
 
-def filter_days_on_hand(df: pl.DataFrame) -> pl.DataFrame:
+def filter_quantity_on_hand(df: pl.DataFrame) -> pl.DataFrame:
     # Filter the DataFrame to exclude rows with days on hand less than 2
-    return df.filter(pl.col(UNITS_SOLD_LAST_30_DAYS) >= 2)
-
+    return df.filter(
+        pl.col(QUANTITY_ON_HAND).cast(pl.Int64, strict=False).fill_null(0).fill_nan(0) >= 2
+    )
 
 def main(
     restock_report_path: pathlib.Path,
@@ -80,7 +82,7 @@ def main(
 
     # Filter the joined DataFrame to exclude rows with days on hand less than 2
     filtered_dataframe = call_with_progress(
-        filter_days_on_hand, progress_bar, joined_dataframe
+        filter_quantity_on_hand, progress_bar, joined_dataframe
     )
 
     # Remove all the joined columns

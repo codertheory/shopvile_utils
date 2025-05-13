@@ -16,6 +16,7 @@ OUTPUT_XLSX_FILE = "output.xlsx"
 
 TOTAL_UNITS = "Total Units"
 UNITS_SOLD_LAST_30_DAYS = "Units Sold Last 30 Days"
+QUANTITY_ON_HAND = "Quantity On Hand"
 DAYS_ON_HAND = "Days on Hand"
 DEFAULT_DAYS_ON_HAND = 1
 INVALID_DAYS_ON_HAND = "Infinity"
